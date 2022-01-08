@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import { Card, Button, Grid } from 'semantic-ui-react';
 import web3 from "../../ethereum/web3";
 import Contribute from "../../components/ContributeForm";
+import {Link} from '../../routes';
 
 function ShowDetail(props){
 
@@ -42,14 +43,24 @@ function ShowDetail(props){
     }
 
     return <Layout>
-        <h3>Camapaign</h3>
+        <h2 style={{color: 'white'}}>Camapaign</h2>
         <Grid>
-            <Grid.Column width={10}>
-                {RenderItem()}
-            </Grid.Column>
-            <Grid.Column width={6}>
-                <Contribute address={props.address} />
-            </Grid.Column>
+            <Grid.Row>
+                <Grid.Column width={10}>
+                    {RenderItem()}
+                </Grid.Column>
+                <Grid.Column width={6}>
+                    <Contribute address={props.address} />
+                </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+                <Grid.Column>
+                <Link route={`/campaigns/${props.address}/requests`}><a className='item'>
+                        <Button content="View Requests" primary />
+                    </a>
+                </Link>
+                </Grid.Column>
+            </Grid.Row>
         </Grid>
     </Layout>
 };

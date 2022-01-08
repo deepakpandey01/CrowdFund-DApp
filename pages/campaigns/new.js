@@ -22,19 +22,20 @@ function NewCampaign(){
         }catch(err){
             setMsg(err.message);
         }
+        setVal('');
         setLoading(false);
     }
     return <Layout>
-        <h2>Create a Campaign</h2>
+        <h2 style={{color: 'white'}}>Create a Campaign</h2>
         <Form onSubmit={onSubmit} error={!!msg}>
             <Form.Field>
-                <label>Minimum Contribution</label>
+                <label style={{color: 'white'}}>Minimum Contribution</label>
                 <Input label="wei" labelPosition="right" value={val} onChange={item => {
                     setVal(item.target.value);
                 }} />
             </Form.Field>
             <Message error header="Oops!" content={msg} />
-            <Button loading={loading} primary>Create!</Button>
+            <Button content="Create" icon="add square" primary />
         </Form>
     </Layout>
 }

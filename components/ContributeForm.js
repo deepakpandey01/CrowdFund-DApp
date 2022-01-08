@@ -28,9 +28,9 @@ function Contribute(props){
     }
 
     return (
-        <Form onSubmit={onSubmit} error={!!msg}>
+        <Form onSubmit={onSubmit} error={!!msg} >
             <Form.Field>
-                <label>Amount to Contribute</label>
+                <label style={{color: 'white'}}><h3>Enter amount to Contribute</h3></label>
                 <Input label="ether" labelPosition="right" value={val} onChange={item => {
                     setVal(item.target.value);
                 }} />

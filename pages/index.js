@@ -23,6 +23,7 @@ function Hello(props){
 
     return <div>
         <Layout>
+        <h2 style={{color: 'white', marginLeft: 5}}>Ongoing Campaigns</h2>
         <Link route='/campaigns/new'><a className='item'>
             <Button floated='right' content="Create Camapaign" icon="add circle" primary />
         </a></Link>
