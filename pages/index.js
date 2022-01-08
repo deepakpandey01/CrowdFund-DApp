@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Contract from '../ethereum/factory';
 import Layout from '../components/Layout';
 import { Card, Button, Menu } from 'semantic-ui-react';
+import {Link} from '../routes';
 import 'semantic-ui-css/semantic.min.css'
 
 
@@ -11,7 +12,9 @@ function Hello(props){
         const item=props.campaigns.map(address => {
             return {
                 header: address,
-                description: <a>Visit</a>,
+                description: <Link route={`/campaigns/${address}`}>
+                        <a className='item'>Visit</a>
+                    </Link>,
                 fluid: true
             };
         });
@@ -20,7 +23,9 @@ function Hello(props){
 
     return <div>
         <Layout>
-        <Button floated='right' content="Create Camapaign" icon="add circle" primary />
+        <Link route='/campaigns/new'><a className='item'>
+            <Button floated='right' content="Create Camapaign" icon="add circle" primary />
+        </a></Link>
         {RenderItem()}
         </Layout>
     </div>

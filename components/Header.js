@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu } from 'semantic-ui-react';
+import {Link} from '../routes';
 import 'semantic-ui-css/semantic.min.css';
 
 
@@ -10,16 +11,16 @@ function Header(){
     }
 
     return <Menu style={{marginTop: '10px', fontSize: '20px'}}>
-         <Menu.Item >
-            CrowdCoin
-        </Menu.Item>
+         <Link route="/">
+            <a className='item'>CrowdCoin</a>
+        </Link>
         <Menu.Menu position='right'>
-            <Menu.Item >
-                Camapaigns
-            </Menu.Item>
-            <Menu.Item name='add' active={activeItem === 'add'} onClick={handleItemClick}>
-                +
-            </Menu.Item>
+            <Link route="/">
+                <a className='item'>Campaigns</a>
+            </Link>
+            <Link route="/campaigns/new">
+                <a className='item'>+</a>
+            </Link>
         </Menu.Menu>
     </Menu>
 };
