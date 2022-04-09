@@ -19,8 +19,9 @@ import web3 from './web3';
 
 const instance=new web3.eth.Contract(
     JSON.parse(CampaignFactory.interface),
-    "0x56023019b942b25C12E05f2a8FCc2F925b77D756"
+    "0x8211F3625D9037e349883C66f36eadc6b2B39f1E"
 );
 export default instance;
 
 // export default Factory1;
+// 0x56023019b942b25C12E05f2a8FCc2F925b77D756
